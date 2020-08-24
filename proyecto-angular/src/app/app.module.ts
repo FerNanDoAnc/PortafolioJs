@@ -1,11 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+//importado desde el app routing
+import {routing, appRoutingProviders} from './app.routing';
 
 import { AppComponent } from './app.component';
 import { AboutComponent } from './components/about/about.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { CreateComponent } from './components/create/create.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { ErrorComponent } from './components/error/error.component';
 
 @NgModule({
   declarations: [
@@ -13,12 +16,18 @@ import { ContactComponent } from './components/contact/contact.component';
     AboutComponent,
     ProjectsComponent,
     CreateComponent,
-    ContactComponent
+    ContactComponent,
+    ErrorComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    //se carga el touting xq es un modulo
+    routing
   ],
-  providers: [],
+  providers: [
+    //se carga aqui Porque es un servicio
+    appRoutingProviders
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

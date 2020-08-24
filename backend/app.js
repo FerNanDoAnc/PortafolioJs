@@ -12,8 +12,15 @@ var project_routes = require('./routes/project'); //cargado desde el routes/proj
 app.use(bodyParser.urlencoded({ extended: false })); //confg. nesesaria para body parser
 app.use(bodyParser.json());//convertitr a json lo q llegue al body
 
-//CORS
-
+//CORS-Se ejecut antes de cada peticion
+// Configurar cabeceras y cors  para hacer peticiones ajax a nuestra api ...blog de vr
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Headers', 'Authorization, X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Request-Method');
+    res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
+    res.header('Allow', 'GET, POST, OPTIONS, PUT, DELETE');
+    next();
+});
 
 //Rutas 
 app.use('/api',project_routes);  //api es una direccion q se sobreecribra dentro de la ruta

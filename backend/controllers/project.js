@@ -1,6 +1,8 @@
 'use strict';
 
 var Project=require('../models/project');   //Importar  prject desde models
+//libreria para borrar un archivo o img
+var fs = require('fs');
 
 var controller ={
     home: function(req,res){
@@ -80,14 +82,36 @@ var controller ={
             });
         })
     },
+    //Subir imagen
     uploadImage: function(req, res){
         var projectId = req.params.id;
         var fileName="Error!! Imagen no subida...";
 
-        if(req.files){
-            return res.status(200).send({
-                files:req.files
-            });
+        if(req.files){  //recoger imagen
+            var filePath=req.files.image.path;
+            var fileSplit =filePath.split('\\');
+            var fileName=fileSplit[1];
+            //sacar la exxtension del archivos
+            var extSplit =fileName.split('\.');
+            var fileExt=extSplit[1];
+
+            //validacion al subir imagenes
+            if(fileExt=='png'||fileExt=='jpg'||fileExt=='jpeg'||fileExt=='gif'){
+                    //psar la propiedad image para guardarla
+                Project.findByIdAndUpdate(projectId,{image:fileName},{new:true},(err,projectUpdate)=>{
+                    if(err) return res.status(500).send({message:"Error al subir imagen"});
+                    if(!projectUpdate) return res.status(404).send({message:"La imagen no existe"});
+
+                    return res.status(200).send({
+                        project:projectUpdate  
+                    });
+                });
+            }else{
+                fs.unlink(filePath,(err)=>{
+                    return res.status(200).send({message:'La extension de la imagenn  no es valida'});
+
+                });
+            }
         }else{
             return res.status(200).send({
                 message: fileName

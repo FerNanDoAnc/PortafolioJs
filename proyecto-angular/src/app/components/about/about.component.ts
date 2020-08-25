@@ -6,8 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./about.component.css']
 })
 export class AboutComponent implements OnInit {
+  public title: string;
+  public subtitle: string;
+  public web: string;
 
-  constructor() { }
+  constructor() { 
+    this.title ="Fernando A";
+    this.subtitle ="Desarrollador web";
+    this.web ="https://github.com/FerNanDoAnc";
+  }
 
   ngOnInit(): void {
   }

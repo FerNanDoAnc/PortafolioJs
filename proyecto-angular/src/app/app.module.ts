@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {HttpClientModule} from '@angular/common/http';    //para hacer peticiones ajax:httpclient
+import {FormsModule} from '@angular/forms';
 //importado desde el app routing
 import {routing, appRoutingProviders} from './app.routing';
 

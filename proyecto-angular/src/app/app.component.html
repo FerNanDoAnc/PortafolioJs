@@ -1,13 +1,16 @@
 <!--CABECERA-->
 <header>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Londrina+Solid&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+
     <ul>
-        <li><a [routerLink]="['/sobre-mi']">Sobre mi</a></li>
-        <li><a [routerLink]="['/proyectos']">Proyecto</a></li>
-        <li class="logo">
+        <li><a [routerLink]="['/sobre-mi']" [routerLinkActive]="['actived']">Sobre mi</a></li>
+        <li><a [routerLink]="['/proyectos']" [routerLinkActive]="['actived']">Proyecto</a></li>
+        <li id="logo">
             <a href="#">FA</a>
         </li>
-        <li><a [routerLink]="['/crear-proyecto']">Crear Proyecto</a></li>
-        <li><a [routerLink]="['/contacto']">Contacto</a></li>
+        <li><a [routerLink]="['/crear-proyecto']" [routerLinkActive]="['actived']">Crear Proyecto</a></li>
+        <li><a [routerLink]="['/contacto']" [routerLinkActive]="['actived']">Contacto</a></li>
     </ul>
 </header>
 <!--SECCION-->

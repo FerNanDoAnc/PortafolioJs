@@ -14,6 +14,7 @@ import {ProjectService} from '../../services/project.service';
 export class CreateComponent implements OnInit {
   //crear propiedades 
   public title: string;
+  public name: string;
   public project: Project;
 
   constructor(
@@ -23,11 +24,17 @@ export class CreateComponent implements OnInit {
     this.title ="Crear Proyecto";
     this.project=new Project('','','','',2020,'','');
   }
+  ngIf(){
 
+  }
   ngOnInit(): void {
   }
 
   onSubmit(form){
     console.log(this.project);
+    
+    if(name==null || length==0){
+      document.querySelector("#errorNombre").innerHTML="El nombre es obligatorio.";
+    }
   }
 }

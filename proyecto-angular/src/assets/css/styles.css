@@ -69,7 +69,7 @@ header a:hover,
 }
 #logo a:hover{
     background: transparent;
-    color: rgba(219, 31, 31, 0.8);;
+    color: rgba(219, 31, 31, 0.8);
     transform: scale( 1.8, 1.80);
 }
 
@@ -82,7 +82,7 @@ header a:hover,
     border-left: 1px solid #b7b7b7;
     border-right: 1px solid #b7b7b7;
     background: rgba(255, 255, 255, 0.7);
-    padding-top: 120px;
+    padding-top: 115px;
 }
 
 /*Pie de pagina*/
@@ -133,7 +133,7 @@ article.about {
 
 /*SECCION CON FORMULARIO*/
 .container {
-    padding: 50px;
+    padding: 70px;
     padding-top: 10px;
 }
 .container h2{
@@ -143,16 +143,47 @@ article.about {
     margin-bottom: 15px;
 }
 form{
-    width: 50%;
+    width: 60%;
+    font-size: 92%;
 }
 form label{
     display: block;
     width: 100%;
     margin-top: 10px;
+    margin-bottom: 8px;
 }
 form input[type="text"],
 form input[type="number"],
 form input[type="email"],
 form textarea{
-    width: 75%;
+    font-size: 0.8em;
+    width: 65%;
+    height: 1.8em;
+    border-radius: 8px;
+}
+form button,
+form input[type="submit"]{
+    display: block;
+    font-size: 25px;
+    width: 65%;
+    padding: 10px;
+    margin-top: 15px;
+    color: white;
+    background: #4CAF50;
+    border: 1px solid #0b7c0f;
+    cursor: pointer;
+    border-radius: 8px;
+}
+form button:hover,
+form input[type="submit"]:hover{
+    background: #46a049;
+    border: 1px solid #0b7c0f;
+    border-radius: 8px;
+}
+form button:active,
+form input[type="submit"]:active{
+    border-radius: 8px;
+    background: #46a049;
+    border:2px solid #0b7c0f;
+    margin-right:10px;
 }

@@ -130,3 +130,29 @@ article.about {
     padding-bottom: 30px;
     text-align: justify;
 }
+
+/*SECCION CON FORMULARIO*/
+.container {
+    padding: 50px;
+    padding-top: 10px;
+}
+.container h2{
+    display: block;
+    border-bottom:  1px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+form{
+    width: 50%;
+}
+form label{
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+}
+form input[type="text"],
+form input[type="number"],
+form input[type="email"],
+form textarea{
+    width: 75%;
+}

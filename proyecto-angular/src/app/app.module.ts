@@ -24,7 +24,9 @@ import { ErrorComponent } from './components/error/error.component';
   imports: [
     BrowserModule,
     //se carga el touting xq es un modulo
-    routing
+    routing,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [
     //se carga aqui Porque es un servicio

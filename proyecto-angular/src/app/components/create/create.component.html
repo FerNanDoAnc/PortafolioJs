@@ -1,1 +1,33 @@
-<p>create works!</p>
+<div class="container">
+    <h2>{{title}}</h2>
+
+    <form #projectForm="ngForm"(ngSubmit)="onSubmit(projectForm)">
+        <p>
+            <label for="name">Nombre</label>
+            <input type="text" name="name" #name="ngModel" [(ngModel)]="project.name">
+        </p>
+        <p>
+            <label for="description">Descripción</label>
+            <textarea name="description" #description="ngModel" 
+                [(ngModel)]="project.description">
+            </textarea>
+        </p>
+        <p>
+            <label for="category">Categoría</label>
+            <input type="text" name="category" #category="ngModel" [(ngModel)]="project.category">
+        </p>
+        <p>
+            <label for="year">Año de lanzamiento</label>
+            <input type="number" name="year" #year="ngModel" [(ngModel)]="project.year">
+        </p>
+        <p>
+            <label for="langs">Lenguajes Utilizados</label>
+            <input type="text" name="langs" #langs="ngModel" [(ngModel)]="project.langs">
+        </p>
+        <p>
+            <label for="image">Imagen del Proyecto</label>
+            <input type="file" name="image" placeholder="Subir imagen" #image="ngModel" [(ngModel)]="project.image">
+        </p>
+        <input type="submit" value="Enviar">
+    </form>
+</div>

@@ -6,7 +6,8 @@
             <label for="name">Nombre</label>
             <input type="text" name="name" #name="ngModel" [(ngModel)]="project.name"
             required>
-            <span id="errorNombre" *ngIf="name.touched && !name.valid">
+            <span id="errorNombre" class="form_error"
+            *ngIf="!name.valid && (name.touched || name.dirty)">
                 El nombre es obligatorio.
             </span>
         </p>
@@ -15,7 +16,8 @@
             <textarea name="description" #description="ngModel" 
                 [(ngModel)]="project.description" required>
             </textarea>
-            <span *ngIf="description.touched && !description.valid">
+            <span id="errorDescripcion" class="form_error"
+            *ngIf="description.touched && !description.valid">
                 La descripción es obligatoria.
             </span>
         </p>
@@ -23,7 +25,8 @@
             <label for="category">Categoría</label>
             <input type="text" name="category" #category="ngModel" [(ngModel)]="project.category" 
             required>
-            <span *ngIf="category.touched && !category.valid">
+            <span id="errorCategoria" class="form_error"
+            *ngIf="category.touched && !category.valid">
                 La categoria es obligatoria.
             </span>
         </p>
@@ -35,7 +38,8 @@
             <label for="langs">Lenguajes Utilizados</label>
             <input type="text" name="langs" #langs="ngModel" [(ngModel)]="project.langs"
             required>
-            <span *ngIf="langs.touched && !langs.valid">
+            <span id="errorLenguajes" class="form_error"
+            *ngIf="langs.touched && !langs.valid">
                 Los lenguajes son obligatorios.
             </span>
         </p>
@@ -43,6 +47,7 @@
             <label for="image">Imagen del Proyecto</label>
             <input type="file" name="image" placeholder="Subir imagen" #image="ngModel" [(ngModel)]="project.image">
         </p>
-        <input type="submit" value="Enviar">
+        <input type="submit" value="Enviar" [disabled]="!projectForm.form.valid">
+
     </form>
 </div>

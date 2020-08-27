@@ -143,7 +143,7 @@ article.about {
     margin-bottom: 15px;
 }
 form{
-    width: 60%;
+    width: 80%;
     font-size: 92%;
 }
 form label{
@@ -157,7 +157,7 @@ form input[type="number"],
 form input[type="email"],
 form textarea{
     font-size: 0.8em;
-    width: 65%;
+    width: 40%;
     height: 1.8em;
     border-radius: 8px;
 }
@@ -165,7 +165,7 @@ form button,
 form input[type="submit"]{
     display: block;
     font-size: 25px;
-    width: 65%;
+    width: 40%;
     padding: 10px;
     margin-top: 15px;
     color: white;
@@ -173,6 +173,7 @@ form input[type="submit"]{
     border: 1px solid #0b7c0f;
     cursor: pointer;
     border-radius: 8px;
+
 }
 form button:hover,
 form input[type="submit"]:hover{
@@ -180,10 +181,21 @@ form input[type="submit"]:hover{
     border: 1px solid #0b7c0f;
     border-radius: 8px;
 }
+form input[disabled]{
+    cursor: not-allowed;
+    
+}
+
 form button:active,
 form input[type="submit"]:active{
     border-radius: 8px;
     background: #46a049;
     border:2px solid #0b7c0f;
     margin-right:10px;
+}
+.form_error{
+    font-size: 15px;
+    padding: 5px;
+    margin-left: 5px;
+    color: red;
 }

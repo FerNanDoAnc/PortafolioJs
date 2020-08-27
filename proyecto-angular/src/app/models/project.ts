@@ -1,4 +1,7 @@
 export class Project{
+    get(field: String) {
+      throw new Error("Method not implemented.");
+    }
     //definir modelo
     constructor(
         public _id: string,

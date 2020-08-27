@@ -14,15 +14,24 @@ import {ProjectService} from '../../services/project.service';
 export class CreateComponent implements OnInit {
   //crear propiedades 
   public title: string;
-  public name: string;
-  public project: Project;
 
+  public name: string;
+  public description: string;
+  public category: string;
+  public langs: string;
+
+  public project: Project;
+  //validar correos
+  private emailPattern: any = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  
   constructor(
     private _projectService: ProjectService
   ) { 
     //dar valor a las propiedades
     this.title ="Crear Proyecto";
     this.project=new Project('','','','',2020,'','');
+
+    
   }
   ngIf(){
 
@@ -32,9 +41,12 @@ export class CreateComponent implements OnInit {
 
   onSubmit(form){
     console.log(this.project);
-    
-    if(name==null || length==0){
-      document.querySelector("#errorNombre").innerHTML="El nombre es obligatorio.";
+
+    //my validaciones click 
+    if(form.valid==true){
+      form.resetForm();
+    }else{
+    console.log("Error en la validacon")
     }
   }
 }

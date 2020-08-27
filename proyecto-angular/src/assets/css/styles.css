@@ -197,5 +197,19 @@ form input[type="submit"]:active{
     font-size: 15px;
     padding: 5px;
     margin-left: 5px;
-    color: red;
+    color: #f44336;
+}
+.message{
+    width: 50%;
+    padding: 5px;
+    border: 1px solid #eee;
+}
+.success{
+    color: #4CAF50;
+}
+.message a{
+    color: #2196F3;
+}
+.failed{
+    color: #f44336;
 }

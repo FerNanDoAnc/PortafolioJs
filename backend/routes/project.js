@@ -18,6 +18,6 @@ router.get('/projects',ProjectController.getProjects);
 //put para actualizar
 router.put('/project/:id',ProjectController.updateProject);
 router.delete('/project/:id',ProjectController.deletePoject);
-router.post('/upload-image/:id',multipartMiddleware, ProjectController.uploadImage);
+router.post('/upload-image/:id', ProjectController.uploadImage);
 
 module.exports = router;    //cargar esta ruta en el app.js

@@ -4,7 +4,7 @@ var mongoose = require('mongoose'); //importar mongoose que se encarga de trabaj
 var Schema =mongoose.Schema;         //esuema de un modelo con el objeto Schema
 
 var ProjectSchema= Schema({         //objto molde para crear nuevos proyectos
-    name:String, //en mongose se define asi,para qe este lo cree en la bd
+    name:String, //en mozngose se define asi,para qe este lo cree en la bd
     description:String,
     category:String,
     year:Number,

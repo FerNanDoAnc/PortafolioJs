@@ -51,7 +51,7 @@ export class CreateComponent implements OnInit {
     }*/
 
     //GUARDAR los datos de la imagen
-    this._projectService.saveProject(this.project).subscribe(
+    this._projectService.saveProjects(this.project).subscribe(
       response=>{
         if(response.project){
           //SUBIR la imagen //_Uploadservice proviene de upload.service.ts

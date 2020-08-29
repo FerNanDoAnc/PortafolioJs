@@ -17,7 +17,7 @@ export class ProjectService{
     testService(){
         return 'Probando el servicio de angular';
     }
-    saveProject(project: Project):Observable<any>{  //Se devleve un observable
+    saveProjects(project: Project):Observable<any>{  //Se devleve un observable
         //paraetros que se van a enviar por JSONSTRING
         let params = JSON.stringify(project);
         //cabeceras de como se va a enviar la informacion

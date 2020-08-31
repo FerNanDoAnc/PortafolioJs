@@ -3,6 +3,8 @@
 var Project=require('../models/project');   //Importar  prject desde models
 //libreria para borrar un archivo o img
 var fs = require('fs');
+//nos permite cargar rutas fisicas del sistemas de archivos
+const path = require('path');
 
 var controller ={
     home: function(req,res){
@@ -117,6 +119,26 @@ var controller ={
                 message: fileName
             });
         }
+    },
+    //para mostrar imagen de la bd a la vista
+    getImagefile: function(req, res){
+        //image sera el arcivo q se pasara por la url comom parametro
+        var file=req.params.image;
+        //esta sera la ruta de la imagen
+        var path_file='./uploads/'+file;
+        //usameos la fs para devolver el archivo
+        //si existe el path
+        fs.exists(path_file,(exists)=>{
+            if(exists){
+                return res.sendFile(path.resolve(path_file));
+            }else{
+                return res.status(200).send({
+                    message:"La imagen no existe!!!!....."
+                });
+            }
+        });
+        
+
     }
 }; 
 

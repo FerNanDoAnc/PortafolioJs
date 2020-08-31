@@ -15,7 +15,7 @@ import {Global} from '../../services/global';
 })
 export class ProjectsComponent implements OnInit {
   //array para mostarl en la vista
-  public projects: Project[];
+  public projects: Project[];x
   //para la img
   public url: string;
 

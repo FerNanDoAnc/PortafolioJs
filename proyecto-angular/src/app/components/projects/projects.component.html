@@ -2,7 +2,11 @@
     <h2>Lista de Proyectos</h2>
 
     <ul>
-        <li *ngFor="let project of projects">
+        <li *ngFor="let project of projects" class="project">
+            <div class="image">
+                <img src="{{url+'get-image/'+project.image}}"
+                *ngIf="project.image" alt="Imagen del proyecto">
+            </div>
             <h3>{{project.name}}</h3>
             <p>{{project.category}} </p>
         </li>

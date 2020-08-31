@@ -27,4 +27,12 @@ export class ProjectService{
         return this._http.post(this.url+'save-project',params,{headers:headers});//la url viene del global .Luego se pasan los params como segundo parmetro,son los datos que se van a guaradar
 
     }
+    //Este metodo sera usao en el project.component.ts
+    getProjects():Observable<any>{
+        //set enviar informacion ,por JSON
+        let headers = new HttpHeaders().set('Content-Type', 'application/json');
+        //peticion AJAX por get,comsumimos la url del API y pasamoslos headers
+        return this._http.get(this.url+'projects',{headers:headers});
+    }
+
 } 

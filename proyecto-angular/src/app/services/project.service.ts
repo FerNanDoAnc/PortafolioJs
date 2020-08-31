@@ -4,6 +4,7 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';    //para hacer pe
 import {Observable} from 'rxjs/Observable'; //incluida en angular-de lo contraio npm install --save rxjs-compat
 import {Project} from '../models/project';
 import {Global} from './global';   //importado desde el global.ts
+import { observable } from 'rxjs';
 
 @Injectable()
 export class ProjectService{
@@ -33,5 +34,13 @@ export class ProjectService{
         //peticion AJAX por get,comsumimos la url del API y pasamoslos headers
         return this._http.get(this.url+'projects',{headers:headers});
     }
+    //Para sacar un unico proyecto
+    //se usara en el detail.component.ts
+    getProject(id): Observable<any>{
+        //set enviar informacion ,por JSON
+        let headers = new HttpHeaders().set('Content-Type', 'application/json');
+        //hacemos una peticion por get yadeas se le concatena el id para porder extraerlo   
+        return this._http.get(this.url+'project/'+id,{headers:headers});    
+}
 
 } 

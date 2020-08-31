@@ -3,7 +3,9 @@
 
     <div class="message success" *ngIf="status =='success'">
         !Proyecto creado! puedes 
-        <a href="proyectos">Verlo aqui !!.</a>
+        <a [routerLink]="['/proyecto',save_project._id]">
+            Ver los detalles aqui !!.
+        </a>
     </div>
     <div class="message failed" *ngIf="status =='failed'">
         ERROR!! El proyecto no se ha creado. 

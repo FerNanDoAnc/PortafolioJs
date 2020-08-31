@@ -75,7 +75,7 @@ header a:hover,
 
 /*Contenedor principal*/
 #content{
-    min-height: 600px;
+    min-height: 640px;
     height: auto;
     width: 75%;
     margin: 0px auto;
@@ -235,4 +235,8 @@ form input[type="submit"]:active{
 }
 .project img{
     width: 100%;
+}
+.project a{
+    text-decoration: none;
+    color: black;
 }

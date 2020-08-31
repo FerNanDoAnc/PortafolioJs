@@ -21,6 +21,8 @@ export class CreateComponent implements OnInit {
   //crear propiedades 
   public title: string;
   public project: Project;
+  //Para mostrar el detalle de c/u de los proyectos
+  public save_project
   //Para mostrar un mensaje de exito
   public status: string;
   //ficheros para subir, my amegenes
@@ -57,6 +59,9 @@ export class CreateComponent implements OnInit {
           //SUBIR la imagen //_Uploadservice proviene de upload.service.ts
           this._uploadService.makeFileRequest(Global.url+"upload-image/"+response.project._id,[],this.filesToUpload, 'image')
           .then((result:any)=>{
+            //para hacer el link en el htl q redirige al detalle del proyecto
+            this.save_project=result.project;
+
             this.status ='success';
             console.log(result);
             form.reset();

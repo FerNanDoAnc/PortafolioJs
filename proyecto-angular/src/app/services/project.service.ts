@@ -41,6 +41,13 @@ export class ProjectService{
         let headers = new HttpHeaders().set('Content-Type', 'application/json');
         //hacemos una peticion por get yadeas se le concatena el id para porder extraerlo   
         return this._http.get(this.url+'project/'+id,{headers:headers});    
-}
+    }
+    //para Borrar.Se usara en el detail.component paraa elminar un project
+    deleteProject(id):Observable<any>{
+         //set enviar informacion ,por JSON
+         let headers = new HttpHeaders().set('Content-Type', 'application/json');
+         //la id y la id para borrar
+        return this._http.delete(this.url+'project/'+id,{headers:headers});
 
+    }
 } 

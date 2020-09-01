@@ -39,7 +39,7 @@ export class DetailComponent implements OnInit {
       this.getProject(id);
     });
   }
-  //Viene de project.service
+  //Viene de project.service. Tambiense reutilizara en el edit junto al OnInit
   getProject(id){
     //peticion AJAX al backend
     //invocamos al metodo del servicio

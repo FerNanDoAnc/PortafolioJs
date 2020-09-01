@@ -48,6 +48,13 @@ export class ProjectService{
          let headers = new HttpHeaders().set('Content-Type', 'application/json');
          //la id y la id para borrar
         return this._http.delete(this.url+'project/'+id,{headers:headers});
-
+    }
+    //para editar.Se usara en el edit.component
+    updateProject(project):Observable<any>{
+        let params =JSON.stringify(project);
+        //set enviar informacion ,por JSON
+        let headers = new HttpHeaders().set('Content-Type', 'application/json');
+        //la id y la id y todos los parametros para deditarlos con PUT
+       return this._http.put(this.url+'project/'+project._id,params,{headers:headers});
     }
 } 

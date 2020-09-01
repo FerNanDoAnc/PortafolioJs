@@ -18,7 +18,7 @@ const appRoutes: Routes=[
     {path:'crear-proyecto',component:CreateComponent},
     {path:'contacto',component:ContactComponent},
     {path:'proyecto/:id',component:DetailComponent},
-    {path:'editar-proyecto/:id',component:EditComponent},
+    {path:'editar-proyecto/:id',component:EditComponent},   
     {path:'**',component:ErrorComponent}
 ];
 

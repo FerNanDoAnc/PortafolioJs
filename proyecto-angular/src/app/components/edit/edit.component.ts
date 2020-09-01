@@ -15,28 +15,23 @@ import {Router, ActivatedRoute, Params} from '@angular/router';
   templateUrl: '../create/create.component.html',
   styleUrls: ['./edit.component.css'],
   //cargar el servicio
-  providers: [ProjectService,
-    //cargar archivos ,my image 
-    UploadService
+  providers: [
+    ProjectService,
+    UploadService     //cargar archivos ,my image 
   ]
 })
 export class EditComponent implements OnInit {
   public title: string;
   public project: Project;
-  //Para mostrar el detalle de c/u de los proyectos
-  public save_project
-  //Para mostrar un mensaje de exito
-  public status: string;
-  //ficheros para subir, my amegenes
-  public filesToUpload: Array<File>;
+  public save_project   //Para mostrar el detalle de c/u de los proyectos
+  public status: string;    //Para mostrar un mensaje de exito
+  public filesToUpload: Array<File>;  //ficheros para subir, my amegenes
   public url: string; //para cargar la imagen
 
   constructor(
     private _projectService: ProjectService,
-    //viene del servicio creado para subir archivos, my imagenes
-    private _uploadService: UploadService,
-    //injectamos en el constructor
-    private _route: ActivatedRoute,
+    private _uploadService: UploadService,    //viene del servicio creado para subir archivos, my imagenes
+    private _route: ActivatedRoute,    //injectamos en el constructor
     private _router: Router //para cargar la imagen
     
   ) { 

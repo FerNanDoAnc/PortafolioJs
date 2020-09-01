@@ -51,7 +51,7 @@ export class ProjectService{
     }
     //para editar.Se usara en el edit.component
     updateProject(project):Observable<any>{
-        let params =JSON.stringify(project);
+        let params =JSON.stringify(project);//Psamos los parametro a la peticion y los guarda
         //set enviar informacion ,por JSON
         let headers = new HttpHeaders().set('Content-Type', 'application/json');
         //la id y la id y todos los parametros para deditarlos con PUT

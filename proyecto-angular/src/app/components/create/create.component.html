@@ -34,7 +34,7 @@
         <p>
             <label for="category">Categoría</label>
             <input type="text" name="category" #category="ngModel" [(ngModel)]="project.category" 
-            required placeholder=" Categoría">
+                required placeholder=" Categoría">
             <span id="errorCategoria" class="form_error"
             *ngIf="category.touched && !category.valid">
                 La categoria es obligatoria.

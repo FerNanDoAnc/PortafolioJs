@@ -27,7 +27,6 @@ export class CreateComponent implements OnInit {
   public status: string;
   //ficheros para subir, my amegenes
   public filesToUpload: Array<File>;
-  public url: string; //para cargar la imagen
   //validar correos
   private emailPattern: any = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   
@@ -39,7 +38,6 @@ export class CreateComponent implements OnInit {
     //dar valor a las propiedades
     this.title ="Crear Proyecto";
     this.project=new Project('','','','',2020,'','');
-    this.url=Global.url;//cargar imagen
     
   }
   ngOnInit(): void {

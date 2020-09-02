@@ -6,13 +6,15 @@
     </div>
     <div class="data">
         <h1>{{project.name}}</h1>
-        <h2>{{project.description}}</h2>
+        <h2>{{project.description}}</h2><br>
         <p>{{project.category}}</p>
         <p>{{project.langs}}</p>
+        <p>{{project.year}}</p><br>
 
         <p>
             <a [routerLink]="['/editar-proyecto',project._id]" class="button-edit">Editar</a>
             <a (click)="deleteProject(project._id)" class="button-delete">Borrar</a>
+            <a [routerLink]="['/proyectos']" class="button-lista">Colección</a>
         </p>
     </div>
 </div>

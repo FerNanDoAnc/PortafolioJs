@@ -12,7 +12,7 @@ import {Router, ActivatedRoute, Params} from '@angular/router';
 @Component({
   selector: 'app-edit',
   //reutilizamos el create.component
-  templateUrl: '../create/create.component.html',
+  templateUrl: '../edit/edit.component.html',
   styleUrls: ['./edit.component.css'],
   //cargar el servicio
   providers: [
@@ -37,7 +37,7 @@ export class EditComponent implements OnInit {
   ) { 
     //dar valor a las propiedades
     this.title ="Editar Proyecto";
-    this.url=Global.url;
+    this.url=Global.url;//cargar imagen
   }
 
 
@@ -62,5 +62,40 @@ export class EditComponent implements OnInit {
         console.log(<any>error);
       }
     )
+  }
+  onSubmit(){
+    this._projectService.updateProject(this.project).subscribe(
+      response=>{
+        //se copa del create.component
+        if(response.project){
+          //SUBIR la imagen //_Uploadservice proviene de upload.service.ts
+          //se fube cando if tenga algo
+          if(this.filesToUpload){
+              this._uploadService.makeFileRequest(Global.url+"upload-image/"+response.project._id,[],this.filesToUpload, 'image')
+              .then((result:any)=>{
+              //para hacer el link en el htl q redirige al detalle del proyecto
+              this.save_project=result.project;
+
+              this.status ='success';
+              console.log(result);
+            });
+          }
+          else{
+            this.save_project=response.project;
+              this.status ='success';
+          }
+        }else{
+          this.status='failed';
+        }
+      },
+      error=>{
+        console.log(<any>error);
+      }
+    );
+  }
+  //captuar el evento del boton->input del html
+  fileChangeEvent(fileInput:any){
+    //capturar eventeo y castear a un array de file y seleccionar el archivo q se recoge con el input
+    this.filesToUpload=<Array<File>>fileInput.target.files;
   }
 }

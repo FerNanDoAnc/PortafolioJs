@@ -143,6 +143,7 @@ article.about {
 }
 .container .image img{
     width: 100%;
+    border-radius: 10px;
 }
 .container .data {
     float: left;
@@ -177,7 +178,8 @@ form textarea{
 form button,
 form input[type="submit"],
 .button-edit,
-.button-delete{
+.button-delete,
+.button-lista{
     display: block;
     font-size: 25px;
     width: 40%;
@@ -191,7 +193,8 @@ form input[type="submit"],
 
 }
 .button-edit,
-.button-delete{
+.button-delete,
+.button-lista{
     width:20%;
     float: left;
     margin-right: 10px;
@@ -211,6 +214,14 @@ form input[type="submit"],
 .button-delete:hover{
     background: #da190b;
     border: 1px solid #da190b;
+}
+.button-lista{
+    background: #2196F3;
+    border: 1px solid #0b7dda;
+}
+.button-lista:hover{
+    background: #0b7dda;
+    border: 1px solid #0b7dda;
 }
 
 form button:hover,

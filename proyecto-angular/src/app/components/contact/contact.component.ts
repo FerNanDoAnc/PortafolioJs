@@ -19,6 +19,13 @@ export class ContactComponent implements OnInit {
       $("header").css("background","yellow")
                  .css("height","50px");
     });
+
+    //llamamos al bxslider del jquery
+    $('.galeria').bxSlider({
+      mode: 'fade',
+      captions: false,
+      slideWidth: 400
+    }); 
   }
 
 }

@@ -14,6 +14,8 @@ import { ErrorComponent } from './components/error/error.component';
 import { DetailComponent } from './components/detail/detail.component';
 import { EditComponent } from './components/edit/edit.component';
 
+import * as $ from 'jquery';  //importamos todo de la libreria de jquery
+
 @NgModule({
   declarations: [
     AppComponent,

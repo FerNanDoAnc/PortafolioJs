@@ -11,11 +11,9 @@ import {Router, ActivatedRoute, Params} from '@angular/router';
 
 @Component({
   selector: 'app-edit',
-  //reutilizamos el create.component
-  templateUrl: '../edit/edit.component.html',
+  templateUrl: './edit.component.html', //reutilizamos el create.component
   styleUrls: ['./edit.component.css'],
-  //cargar el servicio
-  providers: [
+  providers: [  //cargar el servicio
     ProjectService,
     UploadService     //cargar archivos ,my image 
   ]
@@ -34,9 +32,8 @@ export class EditComponent implements OnInit {
     private _route: ActivatedRoute,    //injectamos en el constructor
     private _router: Router //para cargar la imagen
     
-  ) { 
-    //dar valor a las propiedades
-    this.title ="Editar Proyecto";
+  ) {
+    this.title ="Editar Proyecto";  //dar valor a las propiedades
     this.url=Global.url;//cargar imagen
   }
 
@@ -75,7 +72,6 @@ export class EditComponent implements OnInit {
               .then((result:any)=>{
               //para hacer el link en el htl q redirige al detalle del proyecto
               this.save_project=result.project;
-
               this.status ='success';
               console.log(result);
             });

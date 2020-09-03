@@ -1,20 +1,10 @@
 <div class="container" *ngIf="project">
     <h2>{{title}}</h2>
 
-    <div class="message success" *ngIf="status =='success'">
-        !Proyecto Editado! puedes 
-        <a [routerLink]="['/proyecto',save_project._id]">
-            Ver los detalles aqui !!.
-        </a>
-    </div>
-    <div class="message failed" *ngIf="status =='failed'">
-        ERROR!! El proyecto no se ha Editado. 
-    </div>
-
     <form #projectForm="ngForm"(ngSubmit)="onSubmit(projectForm)">
         <p>
             <label for="name">Nombre</label>
-            <input type="text" name="name" #name="ngModel" [(ngModel)]="project.name"
+            <input type="text" name="name" #name="ngModel" [(ngModel)]="project.name" 
             required placeholder=" Nombre">
             <span id="errorNombre" class="form_error"
             *ngIf="!name.valid && (name.touched || name.dirty)">
@@ -64,7 +54,15 @@
              #image="ngModel" [(ngModel)]="project.image"
              (change)="fileChangeEvent($event)" >
         </p>
-        <input type="submit" value="Editar" [disabled]="!projectForm.form.valid">
-
+        <input type="submit" value="Editar" [disabled]="!projectForm.form.valid"><br>
+        <div class="message success" *ngIf="status =='success'">
+            !Proyecto Editado! 
+            <a [routerLink]="['/proyecto',save_project._id]">
+                Ver los detalles aqui !!.
+            </a>
+        </div>
+        <div class="message failed" *ngIf="status =='failed'">
+            ERROR!! El proyecto no se ha Editado. 
+        </div>
     </form>
 </div>

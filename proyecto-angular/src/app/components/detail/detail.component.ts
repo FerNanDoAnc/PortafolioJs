@@ -15,11 +15,10 @@ import {Router, ActivatedRoute, Params} from '@angular/router';
   //Caragr el servicio
   providers: [ProjectService]
 })
-export class DetailComponent implements OnInit {
-  //PROPIEDADES
+export class DetailComponent implements OnInit {  //PROPIEDADES
   public url: string;
   public project: Project //sera pra el response del getProject
-
+  public confirm:boolean; //para confirmar eliminado
   constructor(
     //cargar el servicio
     private _projectService: ProjectService,
@@ -27,8 +26,8 @@ export class DetailComponent implements OnInit {
     private _router: Router,
     private _route: ActivatedRoute
   ) { 
-    //url para utilizarlo en la vista
-    this.url=Global.url;
+    this.url=Global.url;  //url para utilizarlo en la vista
+    this.confirm= false; //poner el boleano en false
   }
 
   ngOnInit(): void{
@@ -53,6 +52,10 @@ export class DetailComponent implements OnInit {
       }
     )
   }
+  //para confirmar elminacion del proyecto
+  setConfirm(confirm){
+    this.confirm = confirm;
+  } 
   deleteProject(id){
     this._projectService.deleteProject(id).subscribe(
       response=>{

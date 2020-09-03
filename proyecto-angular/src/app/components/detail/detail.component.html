@@ -11,10 +11,17 @@
         <p>{{project.langs}}</p>
         <p>{{project.year}}</p><br>
 
-        <p>
+        <p *ngIf="confirm ==false">
             <a [routerLink]="['/editar-proyecto',project._id]" class="button-edit">Editar</a>
-            <a (click)="deleteProject(project._id)" class="button-delete">Borrar</a>
+            <a (click)="setConfirm(true)" class="button-delete">Borrar</a>
+
             <a [routerLink]="['/proyectos']" class="button-lista">Colección</a>
+        </p>
+
+        <p *ngIf="confirm ==true">
+            <span class="confirm">¿Eliminar definitivamente?</span>
+            <a (click)="deleteProject(project._id)" class="button-delete">Confirmar</a>
+            <a (click)="setConfirm(false)" class="button-cancel">Cancelar</a>
         </p>
     </div>
 </div>

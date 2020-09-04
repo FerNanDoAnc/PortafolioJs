@@ -14,18 +14,7 @@ export class ContactComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    $("#logo").click(function(e){
-      e.preventDefault();
-      $("header").css("background","yellow")
-                 .css("height","50px");
-    });
-
-    //llamamos al bxslider del jquery
-    $('.galeria').bxSlider({
-      mode: 'fade',
-      captions: false,
-      slideWidth: 400
-    }); 
+    
   }
 
 }

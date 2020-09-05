@@ -13,9 +13,10 @@ export class ContactComponent implements OnInit {
   public widthSlider:number;
   public anchuraToSlider:any; //para hacer la condicion de la anchura
   public captions: boolean;
+  public autor: any;
 
   constructor() { 
-    this.captions=false;
+    this.captions=true;
   }
 
   ngOnInit(): void {
@@ -29,5 +30,7 @@ export class ContactComponent implements OnInit {
   resetearSlider(){
     this.anchuraToSlider=false;
   }
-  
+  getAutor(event){
+    this.autor=event; //guradar los datos del evento en el autor
+  }
 }

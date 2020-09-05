@@ -26,7 +26,7 @@ export class SliderComponent implements OnInit {
     //llamamos al bxslider del jquery
     $('.galeria').bxSlider({
       mode: 'fade',
-      captions: false,
+      captions: true,
       slideWidth: this.anchura
     }); 
   }

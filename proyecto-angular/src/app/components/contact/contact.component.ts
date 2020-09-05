@@ -18,8 +18,10 @@ export class ContactComponent implements OnInit {
   ngOnInit(): void {
   }
   cargarSlider(){
-      //this.anchuraToSlider=false;
-      this.anchuraToSlider=this.widthSlider
+      this.anchuraToSlider=false;
+      setTimeout(() =>{
+        this.anchuraToSlider=this.widthSlider;
+      },0.1);
   }
   resetearSlider(){
     this.anchuraToSlider=false;

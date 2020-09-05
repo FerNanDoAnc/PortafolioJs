@@ -10,11 +10,17 @@ declare var $:any;
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent implements OnInit {
+  public widthSlider:number;
+  public anchuraToSlider:any; //para hacer la condicion de la anchura
 
   constructor() { }
 
   ngOnInit(): void {
     
+  }
+  cargarSlider(){
+      //this.anchuraToSlider=false;
+      this.anchuraToSlider=this.widthSlider
   }
 
 }

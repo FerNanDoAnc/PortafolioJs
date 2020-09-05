@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input} from '@angular/core';
 
 // Declaramos las variables para jQuery
 declare var jQuery:any;
@@ -10,13 +10,16 @@ declare var $:any;
   styleUrls: ['./slider.component.css']
 })
 export class SliderComponent implements OnInit {
+  @Input() anchura: number; //para la anchura de la imagen,viene el padre
 
-  constructor() { }
+  constructor() { 
+
+  }
 
   ngOnInit(): void {
     $("#logo").click(function(e){
       e.preventDefault();
-      $("header").css("background","yellow")
+      $("header").css("background","gray")
                  .css("height","50px");
     });
 
@@ -24,7 +27,7 @@ export class SliderComponent implements OnInit {
     $('.galeria').bxSlider({
       mode: 'fade',
       captions: false,
-      slideWidth: 400
+      slideWidth: this.anchura
     }); 
   }
 

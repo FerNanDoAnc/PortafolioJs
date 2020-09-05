@@ -2,10 +2,13 @@
     <h1>Contacto</h1><br>
     Tmamaño del Slider: 
     <input type="number" [(ngModel)]="widthSlider"
-    (keyup.enter)="cargarSlider()">
+    (keyup.enter)="cargarSlider()" (keydown.enter)="resetearSlider()">
+    Con Botones
+    <button (click)="cargarSlider()">Cargar Slider</button>
+    <button (click)="resetearSlider()">Resetear Slider</button>
     
     <div *ngIf="anchuraToSlider">
         <slider [anchura]="anchuraToSlider"></slider>
     </div>
-    
+
 </div>

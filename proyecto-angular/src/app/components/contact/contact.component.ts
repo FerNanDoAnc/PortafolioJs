@@ -16,11 +16,13 @@ export class ContactComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    
   }
   cargarSlider(){
       //this.anchuraToSlider=false;
       this.anchuraToSlider=this.widthSlider
   }
-
+  resetearSlider(){
+    this.anchuraToSlider=false;
+  }
+  
 }

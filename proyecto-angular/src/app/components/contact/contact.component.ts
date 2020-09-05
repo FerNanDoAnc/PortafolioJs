@@ -12,8 +12,11 @@ declare var $:any;
 export class ContactComponent implements OnInit {
   public widthSlider:number;
   public anchuraToSlider:any; //para hacer la condicion de la anchura
+  public captions: boolean;
 
-  constructor() { }
+  constructor() { 
+    this.captions=false;
+  }
 
   ngOnInit(): void {
   }

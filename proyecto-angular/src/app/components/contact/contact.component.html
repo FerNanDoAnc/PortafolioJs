@@ -8,7 +8,9 @@
     <button (click)="resetearSlider()">Resetear Slider</button>
     
     <div *ngIf="anchuraToSlider">
-        <slider [anchura]="anchuraToSlider"></slider>
+        <slider [anchura]="anchuraToSlider"
+                [etiquetas]="captions">
+        </slider>
     </div>
 
 </div>

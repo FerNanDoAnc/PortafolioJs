@@ -11,7 +11,7 @@ declare var $:any;
 })
 export class SliderComponent implements OnInit {
   @Input() anchura: number; //para la anchura de la imagen,viene el padre
-
+  @Input('etiquetas') captions: boolean;
   constructor() { 
 
   }
@@ -26,7 +26,7 @@ export class SliderComponent implements OnInit {
     //llamamos al bxslider del jquery
     $('.galeria').bxSlider({
       mode: 'fade',
-      captions: true,
+      captions: this.captions,
       slideWidth: this.anchura
     }); 
   }

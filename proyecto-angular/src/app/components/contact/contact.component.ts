@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild} from '@angular/core';
 
 // Declaramos las variables para jQuery
 declare var jQuery:any;
@@ -15,13 +15,17 @@ export class ContactComponent implements OnInit {
   public captions: boolean;
   public autor: any;
 
+  @ViewChild('textos', {static: true}) textos;  //viene del html
+  
   constructor() { 
     this.captions=true;
   }
 
   ngOnInit(): void {
+    var opcion_clasica=document.querySelector('#texto').innerHTML;
+    alert(this.textos.nativeElement.textContent);
   }
-  cargarSlider(){
+  cargarSlider(){ //en tiempo real
       this.anchuraToSlider=false;
       setTimeout(() =>{
         this.anchuraToSlider=this.widthSlider;

@@ -13,7 +13,8 @@ import { ContactComponent } from './components/contact/contact.component';
 import { ErrorComponent } from './components/error/error.component';
 import { DetailComponent } from './components/detail/detail.component';
 import { EditComponent } from './components/edit/edit.component';
-import { SliderComponent } from './components/slider/slider.component'; 
+import { SliderComponent } from './components/slider/slider.component';
+import { ResaltadoDirective } from './resaltado.directive'; 
 
 
 //import * as $ from 'jquery';
@@ -27,11 +28,12 @@ import { SliderComponent } from './components/slider/slider.component';
     ErrorComponent,
     DetailComponent,
     EditComponent,
-    SliderComponent
+    SliderComponent,
+    ResaltadoDirective
   ],
   imports: [
     BrowserModule,
-    //se carga el touting xq es un modulo
+    //se carga el routing xq es un modulo
     routing,
     HttpClientModule,
     FormsModule
